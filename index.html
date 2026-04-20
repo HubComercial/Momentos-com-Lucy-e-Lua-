@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Alimentação Natural para Cães | 50 Receitas com 50% para Doação</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Quicksand', sans-serif;
+            background: linear-gradient(145deg, #0a0f1e 0%, #0c1222 100%);
+            color: #eef4ff;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .neon-text {
+            text-shadow: 0 0 5px #ffb347, 0 0 10px #ffb347, 0 0 20px #ff9f2e, 0 0 40px #ff8c00;
+            color: #fff3e0;
+            animation: pulseGlow 2s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% { text-shadow: 0 0 2px #ffb347, 0 0 5px #ffb347; }
+            100% { text-shadow: 0 0 8px #ffcc77, 0 0 20px #ffaa33, 0 0 30px #ff8811; }
+        }
+
+        .neon-border {
+            border: 2px solid rgba(255, 170, 80, 0.6);
+            box-shadow: 0 0 12px rgba(255, 140, 0, 0.5), inset 0 0 6px rgba(255, 200, 100, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .neon-border:hover {
+            box-shadow: 0 0 20px rgba(255, 120, 0, 0.8);
+            border-color: #ffaa44;
+        }
+
+        .btn-cta {
+            background: linear-gradient(95deg, #ff8800, #ffcc33);
+            border: none;
+            color: #1a1f2e;
+            font-weight: 800;
+            font-size: 1.4rem;
+            padding: 1rem 2.5rem;
+            border-radius: 80px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 8px 20px rgba(255, 136, 0, 0.4), 0 0 0 2px rgba(255, 200, 100, 0.5);
+            font-family: inherit;
+            letter-spacing: -0.3px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-cta i {
+            font-size: 1.6rem;
+            transition: transform 0.2s;
+        }
+
+        .btn-cta:hover {
+            transform: scale(1.02);
+            background: linear-gradient(95deg, #ff9f20, #ffdd66);
+            box-shadow: 0 12px 28px rgba(255, 100, 0, 0.6), 0 0 0 3px #fff0b5;
+        }
+
+        .btn-cta:hover i {
+            transform: translateX(6px);
+        }
+
+        .card-glass {
+            background: rgba(18, 25, 45, 0.65);
+            backdrop-filter: blur(10px);
+            border-radius: 48px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 200, 120, 0.25);
+            transition: 0.2s;
+        }
+
+        .benefit-icon {
+            background: linear-gradient(135deg, #ffb34720, #ff882220);
+            border-radius: 100px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ffaa55;
+        }
+
+        /* CONTADOR FLUTUANTE (pessoas online) - ajuste de posição */
+        .floating-online {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            background: #000000aa;
+            backdrop-filter: blur(8px);
+            border-radius: 40px;
+            padding: 8px 18px;
+            font-size: 0.85rem;
+            z-index: 97;
+            border-left: 3px solid #ffaa55;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            font-weight: 500;
+        }
+
+        /* Botão WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: white;
+            cursor: pointer;
+            z-index: 99;
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
+            transition: 0.2s;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+            background: #20b859;
+        }
+
+        /* Notificações de compra - posicionadas acima do contador online */
+        .toast-notification {
+            position: fixed;
+            bottom: 140px;
+            right: 30px;
+            background: #1e2a3a;
+            border-left: 6px solid #ffaa55;
+            padding: 12px 20px;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            z-index: 98;
+            box-shadow: 0 4px 12px black;
+            backdrop-filter: blur(8px);
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .social-counter {
+            background: #00000030;
+            border-radius: 60px;
+            padding: 0.5rem 1.2rem;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            h1 { font-size: 2.2rem; }
+            .btn-cta { font-size: 1.2rem; padding: 0.8rem 1.8rem; }
+            .floating-online { bottom: 80px; right: 10px; font-size: 0.75rem; }
+            .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 28px; }
+            .toast-notification { bottom: 110px; right: 20px; }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: all 0.7s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .donation-badge {
+            background: #ffecb3;
+            color: #1e2a2f;
+            border-radius: 100px;
+            padding: 0.5rem 1.2rem;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        footer {
+            border-top: 1px solid #ffaa5533;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- HEADER -->
+    <div class="reveal" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 24px 0 12px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="background: #ffaa44; width: 44px; height: 44px; border-radius: 60px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem;">🐾</div>
+            <div><span style="font-weight: 600;">momentoscomlucyleua</span><br><span style="font-size: 0.8rem; opacity: 0.7;">Amor de verdade tem quatro patas</span></div>
+        </div>
+        <div class="social-counter">
+            <i class="fas fa-heart" style="color: #ff6680;"></i> <span id="tutorCount">586</span> tutores transformando vidas
+        </div>
+    </div>
+
+    <!-- CONTADOR FLUTUANTE DE PESSOAS ONLINE -->
+    <div class="floating-online" id="floatingOnline">
+        <i class="fas fa-eye"></i> <span id="onlineCount">0</span> pessoas online agora
+    </div>
+
+    <!-- HERO -->
+    <div class="reveal" style="text-align: center; margin: 40px 0 30px;">
+        <div class="donation-badge" style="margin: 0 auto 20px auto; width: fit-content;">
+            <i class="fas fa-hand-holding-heart"></i> 50% de cada venda vai para DOAÇÃO a abrigos de animais
+        </div>
+        <h1 class="neon-text" style="font-size: 3.4rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px;">ALIMENTAÇÃO NATURAL<br>PARA CÃES</h1>
+        <p style="font-size: 1.3rem; max-width: 750px; margin: 0 auto 30px;">🐕 <strong>50 receitas completas</strong> • Tabelas nutricionais • Dosagens por porte • Bônus exclusivos</p>
+        <div style="background: rgba(0,0,0,0.4); border-radius: 80px; padding: 0.8rem 1.5rem; display: inline-flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 30px;">
+            <span><i class="fas fa-check-circle" style="color:#88ff88;"></i> Para filhotes, idosos, renais</span>
+            <span><i class="fas fa-check-circle" style="color:#88ff88;"></i> Guia de transição</span>
+            <span><i class="fas fa-check-circle" style="color:#88ff88;"></i> Alimentos tóxicos</span>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <!-- Botão que faz scroll até o preço -->
+            <button class="btn-cta scroll-to-price"><i class="fas fa-paw"></i> QUERO MUDAR A VIDA DO MEU CÃO <i class="fas fa-arrow-down"></i></button>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.85rem;"><i class="fas fa-lock"></i> Pagamento 100% seguro • Acesso imediato ao PDF</p>
+    </div>
+
+    <!-- STORYTELLING REALISTA -->
+    <div class="reveal" style="display: flex; flex-wrap: wrap; gap: 30px; margin: 60px 0; align-items: center;">
+        <div style="flex: 1; min-width: 240px; text-align: center;">
+            <i class="fas fa-dog" style="font-size: 90px; color: #ffaa66;"></i>
+            <i class="fas fa-cat" style="font-size: 70px; color: #ffaa66; margin-left: -20px;"></i>
+        </div>
+        <div style="flex: 2;">
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">✨ Como tudo começou</h2>
+            <p style="margin-bottom: 20px;">Quando adotei a Lucy, ela tinha alergias na pele e a pelagem estava opaca. Os veterinários indicaram rações caras, mas foi com a mudança para a alimentação natural (com acompanhamento profissional) que ela ficou mais saudável, com mais energia e pelo brilhante.</p>
+            <p style="margin-bottom: 20px;">Passei a compartilhar as receitas no perfil <strong>@momentoscomlucyleua</strong> e muitos tutores pediram um guia completo. Decidi organizar tudo neste e-book e, de quebra, doar metade do valor para abrigos. Você ajuda o seu melhor amigo e ainda salva outros animais ❤️</p>
+            <p><strong>— Lucy e Lua</strong> <i class="fas fa-paw"></i></p>
+        </div>
+    </div>
+
+    <!-- DIFERENCIAIS -->
+    <div class="reveal" style="margin: 60px 0;">
+        <h2 style="text-align: center; font-size: 2.2rem; margin-bottom: 40px;">🐕 Por que este guia é diferente?</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px;">
+            <div class="card-glass">
+                <div class="benefit-icon"><i class="fas fa-book-open"></i></div>
+                <h3>50 receitas passo a passo</h3>
+                <p>Frango, peixe, carne, dietas especiais, petiscos e suplementos — todas com tabela nutricional.</p>
+            </div>
+            <div class="card-glass">
+                <div class="benefit-icon"><i class="fas fa-weight-scale"></i></div>
+                <h3>Dosagem por porte</h3>
+                <p>Do mini ao gigante, você sabe exatamente quanto servir — sem achismo.</p>
+            </div>
+            <div class="card-glass">
+                <div class="benefit-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                <h3>50% de doação</h3>
+                <p>A cada compra, metade do valor vai para ONGs e abrigos. Seu carinho se multiplica.</p>
+            </div>
+            <div class="card-glass">
+                <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Guia de transição + bônus</h3>
+                <p>Troque a ração industrializada sem traumas, tabela de suplementos e sinais de alerta.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- DEPOIMENTOS -->
+    <div class="reveal" style="background: rgba(255, 180, 70, 0.1); border-radius: 64px; padding: 40px 30px; margin: 60px 0;">
+        <h2 style="text-align: center; margin-bottom: 30px;"><i class="fas fa-star" style="color: gold;"></i> O que estão a dizer <i class="fas fa-star" style="color: gold;"></i></h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+            <div style="background: #ffffff10; border-radius: 32px; padding: 24px;">
+                <i class="fas fa-quote-left" style="color: #ffaa55; font-size: 1.8rem;"></i>
+                <p>"Com as receitas, meu cão idoso ficou com mais disposição e o pelo está muito mais bonito. Recomendo a todas as tutoras!"</p>
+                <p><strong>— Ana, tutora do Max</strong></p>
+            </div>
+            <div style="background: #ffffff10; border-radius: 32px; padding: 24px;">
+                <i class="fas fa-quote-left" style="color: #ffaa55; font-size: 1.8rem;"></i>
+                <p>"Achei que alimentação natural fosse cara e complicada. O guia mostrou que é simples, e o meu labrador finalmente está com o peso ideal."</p>
+                <p><strong>— Rafael, pai da Luna</strong></p>
+            </div>
+            <div style="background: #ffffff10; border-radius: 32px; padding: 24px;">
+                <i class="fas fa-quote-left" style="color: #ffaa55; font-size: 1.8rem;"></i>
+                <p>"Indiquei para amigas e todas amaram. O bônus de transição alimentar salvou a adaptação aqui em casa."</p>
+                <p><strong>— Camila, tutora da Mel</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROMOÇÃO COM CRONÓMETRO (7 DIAS, REINICIA) -->
+    <div class="reveal" style="text-align: center; margin: 70px 0 40px;">
+        <div class="neon-border" style="display: inline-block; padding: 20px 40px; border-radius: 80px; background: #0a0f1e;">
+            <p><i class="fas fa-tag"></i> <strong>Promoção especial + doação em dobro nos primeiros 50 compradores</strong></p>
+            <div style="font-size: 2rem; font-weight: 800; letter-spacing: 4px;" id="countdown">07:00:00:00</div>
+            <p style="font-size: 0.8rem;">Oferta por tempo limitado para maximizar doações</p>
+        </div>
+    </div>
+
+    <!-- PREÇO (APENAS EURO) - ÂNCORA PARA O BOTÃO -->
+    <div id="preco-section" class="reveal" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin: 50px 0;">
+        <div style="text-align: center;">
+            <span style="font-size: 1rem; text-decoration: line-through; opacity: 0.6;">De € 14,90</span>
+            <div><span style="font-size: 3.5rem; font-weight: 800;">€ 7,90</span></div>
+            <div class="donation-badge" style="margin: 10px auto;"><i class="fas fa-donate"></i> 50% vai para instituições de resgate animal</div>
+        </div>
+        <div style="max-width: 340px;">
+            <div class="card-glass">
+                <i class="fas fa-shield-alt" style="font-size: 2rem;"></i>
+                <h3>Garantia de 7 dias</h3>
+                <p>Se não ficar satisfeita(o), devolvemos 100% do valor. Sem perguntas.</p>
+                <p><i class="fas fa-laptop"></i> Acesso imediato: PDF + bônus</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA FINAL COM BOTÃO DE COMPRA (link do Stripe) -->
+    <div class="reveal" style="text-align: center; margin: 50px 0 70px;">
+        <a href="https://buy.stripe.com/cNi00l3Rx4Bv2h3a9h9k406" target="_blank" class="btn-cta" style="text-decoration: none; font-size: 1.8rem; padding: 1.2rem 3rem; display: inline-flex;">
+            <i class="fas fa-dog"></i> EU QUERO FAZER MEU CÃO FELIZ <i class="fas fa-arrow-right"></i>
+        </a>
+        <p style="margin-top: 20px;"><i class="fas fa-heart" style="color: #ff6680;"></i> Sua compra ajuda abrigos: cada e-book fornece alimentação natural para 2 cães resgatados durante um mês inteiro.</p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="reveal" style="margin: 40px 0;">
+        <h2 style="text-align: center;">💬 Dúvidas comuns</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 20px; margin-top: 20px;">
+            <div><strong>🔹 Como recebo?</strong><br>Após o pagamento, você baixa o PDF imediatamente e pode salvar no celular/computador.</div>
+            <div><strong>🔹 Preciso de veterinário?</strong><br>Sim, sempre consulte um vet, o e-book é um guia complementar e seguro.</div>
+            <div><strong>🔹 As receitas são para todos os cães?</strong><br>Sim, com adaptações para porte e necessidades especiais (renal, obesidade, filhotes).</div>
+            <div><strong>🔹 A doação é real?</strong><br>Sim, 50% do líquido de cada venda é transferido mensalmente para ONGs parceiras.</div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 30px 0 20px; margin-top: 40px;">
+        <p><i class="fas fa-copyright"></i> 2026 Momentos com Lucy e Lua - Portugal</p>
+        <p>50% das vendas revertidas para abrigos cadastrados. <strong>Cuide com amor, alimente com consciência.</strong></p>
+    </footer>
+</div>
+
+<!-- Botão WhatsApp Flutuante (número direto) -->
+<a href="https://wa.me/351962146991?text=Olá!%20Vi%20o%20e-book%20de%20alimentação%20natural%20e%20gostaria%20de%20tirar%20uma%20dúvida." target="_blank" class="whatsapp-float" id="whatsappFloat">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+    // ========================
+    // 1. CRONÓMETRO (7 DIAS - REINICIA)
+    // ========================
+    let timerInterval;
+    function startTimer(durationInSeconds) {
+        let timer = durationInSeconds;
+        const countdownElement = document.getElementById('countdown');
+        if (!countdownElement) return;
+        function updateDisplay() {
+            const days = Math.floor(timer / 86400);
+            const hours = Math.floor((timer % 86400) / 3600);
+            const minutes = Math.floor((timer % 3600) / 60);
+            const seconds = timer % 60;
+            countdownElement.innerText = `${days.toString().padStart(2, '0')}:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            if (timer === 0) {
+                timer = 7 * 24 * 60 * 60;
+            } else {
+                timer--;
+            }
+        }
+        updateDisplay();
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(updateDisplay, 1000);
+    }
+    startTimer(7 * 24 * 60 * 60);
+
+    // ========================
+    // 2. PESSOAS ONLINE (VARIAÇÃO REALISTA) - FLUTUANTE
+    // ========================
+    const onlineElement = document.getElementById('onlineCount');
+    let currentOnline = 18;
+    function updateOnlineCount() {
+        const variation = Math.floor(Math.random() * 28) + 15;
+        currentOnline = variation;
+        onlineElement.innerText = currentOnline;
+    }
+    updateOnlineCount();
+    setInterval(updateOnlineCount, 30000);
+
+    // ========================
+    // 3. NOTIFICAÇÕES DE COMPRA (30 variações)
+    // ========================
+    const purchaseMessages = [
+        "Mariana (Lisboa) comprou o e-book há 2 minutos",
+        "João (Porto) acabou de adquirir o guia",
+        "Carla (Braga) recomendou para 2 amigas após comprar",
+        "Rui (Coimbra) deu 5 estrelas ao e-book",
+        "Sofia (Faro) fez a compra agora mesmo",
+        "André (Aveiro) está a preparar a receita de frango",
+        "Tatiana (Setúbal) aderiu à alimentação natural",
+        "Miguel (Viseu) comprou para o seu labrador",
+        "Isabel (Leiria) agradeceu o bónus de transição",
+        "Paulo (Évora) acabou de garantir o acesso",
+        "Lúcia (Portimão) vai começar a dieta do idoso",
+        "Fernando (Guarda) pediu ajuda no suporte",
+        "Beatriz (Funchal) compartilhou no Instagram",
+        "Hugo (Ponta Delgada) fez a doação dupla",
+        "Vanessa (Cascais) comprou em 5 segundos",
+        "Ricardo (Oeiras) indicou para o treinador",
+        "Patrícia (Amadora) adorou as tabelas nutricionais",
+        "Nuno (Matosinhos) vai preparar o lote mensal",
+        "Cláudia (Vila Nova de Gaia) já salvou o PDF",
+        "Eduardo (Maia) fez a transição em 1 semana",
+        "Mónica (Rio Tinto) comprou com 50% doação",
+        "Ivo (Almada) recebeu o e-book no email",
+        "Sara (Barreiro) começou com a receita de atum",
+        "José (Póvoa de Varzim) aprovou as dicas de armazenamento",
+        "Tânia (Viana do Castelo) fez o download",
+        "David (Chaves) perguntou sobre suplementos",
+        "Liliana (Caldas da Rainha) comprou agora",
+        "Rogério (Santarém) finalizou o pedido",
+        "Olívia (Castelo Branco) recomendou ao grupo de pets",
+        "Artur (Portalegre) adquiriu o guia completo"
+    ];
+    let usedMessages = [...purchaseMessages];
+    function showPurchaseNotification() {
+        if (usedMessages.length === 0) usedMessages = [...purchaseMessages];
+        const randomIndex = Math.floor(Math.random() * usedMessages.length);
+        const message = usedMessages[randomIndex];
+        usedMessages.splice(randomIndex, 1);
+        const toast = document.createElement('div');
+        toast.className = 'toast-notification';
+        toast.innerHTML = `<i class="fas fa-shopping-cart" style="color:#ffaa55;"></i> ${message}`;
+        document.body.appendChild(toast);
+        setTimeout(() => {
+            toast.remove();
+        }, 5000);
+    }
+    function scheduleRandomNotification() {
+        const delay = Math.random() * 30000 + 40000;
+        setTimeout(() => {
+            showPurchaseNotification();
+            scheduleRandomNotification();
+        }, delay);
+    }
+    scheduleRandomNotification();
+    setTimeout(() => showPurchaseNotification(), 10000);
+
+    // ========================
+    // 4. ROLAGEM SUAVE PARA A SEÇÃO DE PREÇO (apenas o botão do hero)
+    // ========================
+    const priceSection = document.getElementById('preco-section');
+    const scrollButton = document.querySelector('.scroll-to-price');
+    if (scrollButton) {
+        scrollButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            priceSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    }
+
+    // ========================
+    // 5. SCROLL REVEAL
+    // ========================
+    const reveals = document.querySelectorAll('.reveal');
+    function revealScroll() {
+        for (let i = 0; i < reveals.length; i++) {
+            const windowHeight = window.innerHeight;
+            const revealTop = reveals[i].getBoundingClientRect().top;
+            const revealPoint = 100;
+            if (revealTop < windowHeight - revealPoint) {
+                reveals[i].classList.add('active');
+            }
+        }
+    }
+    window.addEventListener('scroll', revealScroll);
+    revealScroll();
+</script>
+</body>
+</html>
